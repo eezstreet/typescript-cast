@@ -1,20 +1,20 @@
-export function reinterpret_cast<T extends Object>(object:Object, options?: Object):T {
+export function reinterpretCast<T extends Object>(object:any, options?: any):T {
     let returnValue:T = {...object} as T;
     if(options === undefined) {
         return returnValue;
     }
 
-    const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
     Object.keys(options).forEach(key => {
-        if(returnValue[key] !== undefined) {
+        const value = (returnValue as any)[key];
+        if(value !== undefined) {
             switch(options[key]) {
                 case "date":
                 case "Date":
-                    returnValue[key] = new Date(returnValue[key]);
+                    (returnValue as any)[key] = new Date(value);
                     break;
                 case "number":
                 case "Number":
-                    returnValue[key] = parseInt(returnValue[key]);
+                    (returnValue as any)[key] = parseInt(value);
                     break;
             }
         }

@@ -1,14 +1,14 @@
 {
-  "name": "@eezstreet/typescript-cast",
-  "version": "1.0.0",
+  "name": "typescript-cast",
+  "version": "1.0.2",
   "description": "A module to safely cast JSON data to TypeScript interfaces and types.",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/eezstreet/typescript-cast"
+    "url": "https://github.com/eezstreet/typescript-cast"
   },
   "keywords": [
     "cast",
@@ -16,7 +16,7 @@
     "json",
     "typescript"
   ],
-  "author": "nick.whitlock",
+  "author": "eezstreet",
   "license": "Apache-2.0",
   "devDependencies": {
     "typescript": "^3.9.7",
@@ -25,6 +25,5 @@
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "types": "index.d.ts"
 }
